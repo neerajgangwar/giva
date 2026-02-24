@@ -1,0 +1,11 @@
+type: giva
+init_type: gradient
+num_batches: -1
+config:
+  r: 64
+  target_modules: [q_proj, k_proj, v_proj, up_proj, down_proj]
+  giva_dropout: 0.05
+  bias: none
+  init_weights: VrUr
+  s_initial: 1
+  o_initial: 0

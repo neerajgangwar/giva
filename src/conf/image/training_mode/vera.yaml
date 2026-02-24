@@ -1,0 +1,7 @@
+type: vera
+init_type: simple
+config:
+  r: 256
+  target_modules: [q_proj, k_proj, v_proj, fc1, fc2]
+  vera_dropout: 0.0
+  d_initial: 1.0

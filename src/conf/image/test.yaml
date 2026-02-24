@@ -1,0 +1,18 @@
+defaults:
+  - _self_
+  - dataset: cifar100
+  - override hydra/hydra_logging: disabled
+  - override hydra/job_logging: stdout
+
+saved_path:
+seed: 0
+results_filename:
+overwrite_results_file: false
+test_batch_size: 128
+ckpt_name: best
+skip_val_check: false
+
+hydra:
+  output_subdir: null
+  run:
+    dir: .

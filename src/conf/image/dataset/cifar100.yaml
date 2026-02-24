@@ -1,0 +1,4 @@
+name: cifar100
+val_split_frac: 0.1
+max_val_examples: 5000
+data_seed: 0

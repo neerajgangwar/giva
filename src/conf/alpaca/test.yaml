@@ -1,0 +1,17 @@
+defaults:
+  - _self_
+  - override hydra/hydra_logging: disabled
+  - override hydra/job_logging: stdout
+
+saved_path:
+dataset_file: datasets/mt-bench/dev_set.json
+seed: 0
+results_filename: validation
+overwrite_results_file: false
+ckpt_name: last
+
+hydra:
+  output_subdir: null
+  run:
+    dir: .
+

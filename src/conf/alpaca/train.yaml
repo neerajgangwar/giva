@@ -1,0 +1,30 @@
+defaults:
+  - _self_
+  - training_mode: lora
+  - override hydra/hydra_logging: disabled
+  - override hydra/job_logging: stdout
+
+model_name_or_path: mistralai/Mistral-7B-v0.1
+save_path:
+optim: AdamW
+lr: 4e-4
+weight_decay: 1e-4
+warmup_steps: 0.1 # between 0.0 and 1.0 or int
+num_epochs: 1
+gradient_clip_val: 1.0
+seed: 0
+overwrite_save_path: false
+log_every_n_steps: 10
+max_input_tokens: 1024
+train_batch_size: 16
+run_name: test
+project_name: peft
+accumulate_grad_batches: 8
+lr_scheduler_type: cosine # cosine, linear, none
+enable_wandb: false
+quantize: false
+
+hydra:
+  output_subdir: null
+  run:
+    dir: .

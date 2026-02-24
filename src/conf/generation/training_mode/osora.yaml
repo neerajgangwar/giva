@@ -1,0 +1,6 @@
+type: osora
+init_type: simple
+config:
+  r: 1024
+  target_modules: [q_proj, k_proj, v_proj, up_proj, down_proj]
+  osora_dropout: 0.05

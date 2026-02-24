@@ -1,0 +1,10 @@
+type: randlora
+init_type: simple
+config:
+  r: 5
+  randlora_alpha: 0.7474
+  randlora_dropout: 0.05
+  target_modules: [q_proj, k_proj, v_proj, up_proj, down_proj]
+  bias: none
+  sparse: false
+  very_sparse: false

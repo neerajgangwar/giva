@@ -1,0 +1,32 @@
+defaults:
+  - _self_
+  - dataset: cifar100
+  - training_mode: fft
+  - override hydra/hydra_logging: disabled
+  - override hydra/job_logging: stdout
+
+model_type: vision # vision, vision_language
+model_name_or_path: roberta-base
+save_path:
+optim: AdamW
+lr: 1e-4
+weight_decay: 0.1
+warmup_steps: 0.0
+num_epochs: 10
+gradient_clip_val: 1.
+seed: 0
+overwrite_save_path: false
+val_check_interval: 1.0
+log_every_n_steps: 10
+train_batch_size: 128
+val_batch_size: 128
+run_name: test
+project_name: peft
+accumulate_grad_batches: 1
+lr_scheduler_type: cosine # cosine, linear, none
+precision: bf16-mixed
+
+hydra:
+  output_subdir: null
+  run:
+    dir: .

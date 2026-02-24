@@ -1,0 +1,34 @@
+defaults:
+  - _self_
+  - training_mode: lora
+  - dataset: commonsense_15k
+  - override hydra/hydra_logging: disabled
+  - override hydra/job_logging: stdout
+
+model_name_or_path:
+save_path:
+optim: AdamW
+lr: 1e-4
+weight_decay: 0.0
+warmup_steps: 100 # 0.0 and 1.0 or int
+num_epochs: 3
+gradient_clip_val: 1.
+seed: 0
+overwrite_save_path: false
+val_check_interval: 200
+log_every_n_steps: 10
+max_input_tokens: 1024
+max_gen_tokens: 256
+train_batch_size: 16
+val_batch_size: 16
+run_name: test
+project_name: peft
+accumulate_grad_batches: 1
+lr_scheduler_type: linear # cosine, linear, none
+train_on_inputs: false
+save_last_ckpt: false
+
+hydra:
+  output_subdir: null
+  run:
+    dir: .

@@ -1,0 +1,8 @@
+name: code_feedback
+data_seed: 42
+train:
+  start_idx: 0
+  end_idx: 100000
+val:
+  start_idx: 100000
+  end_idx: 110000
